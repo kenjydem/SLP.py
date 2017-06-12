@@ -9,5 +9,5 @@ setup(
     scripts=[],
     description='Implementation of sequential linear programming using CyLP.',
     long_description=open('README.txt').read(),
-    install_requires=[  "nlpy >= 0.2",
-                        "pyopt >= 1.0",],)
+    install_requires=[  "NLP.py",
+                        "CyLP",],)
