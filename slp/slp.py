@@ -509,13 +509,14 @@ class SLP(object):
 
             return norm(np.concatenate((np.dot(self.pi,A)+self.gFx_trial, self.stored_cons_dual_xtrial*cons)),np.inf)
 
-    def solve(self, model):
+    def solve(self, model=None):
         """
         Solve method.
         """
 
         self.resetStoredValues()
-        self.model = model
+        if model is not None:
+            self.model = model
         self.x_k = self.model.x0
 
         # Check if the solution is feasible in linear constraints
