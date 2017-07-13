@@ -5,7 +5,7 @@ from scipy.sparse import coo_matrix, csc_matrix
 from scipy.optimize import fsolve
 from numpy.linalg import norm
 import numpy as np
-import logging, copy
+import logging, copy, warnings
 
 class SLP(object):
     """"Sequential Linear Programming solver."""
@@ -94,6 +94,7 @@ class SLP(object):
         logger_name = kwargs.get("logger_name", "slp")
         self.log = logging.getLogger(logger_name)
         self.log.propagate = False
+        warnings.filterwarnings("ignore")
 
         self.resetStoredValues()
         self.x_k = model.x0
